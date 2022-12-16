@@ -1,6 +1,8 @@
 #include "header.h"
 #include <stdlib.h>
 
+var_t var;
+
 /**
  * main - Monty bytecode interpreter
  * @argc: number of arguments passed
@@ -30,10 +32,6 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	on_exit(free_lineptr, &lineptr);
-	on_exit(free_stack, &stack);
-	on_exit(m_fs_close, fs);
-
 	while (getline(&lineptr, &n, fs) != -1)
 	{
 		line_number++;
@@ -43,6 +41,10 @@ int main(int argc, char *argv[])
 			get_op(op, &stack, line_number);
 		}
 	}
+
+	free_lineptr(1, &lineptr);
+	free_stack(1, &stack);
+	m_fs_close(1, fs);
 
 	exit(EXIT_SUCCESS);
 }
