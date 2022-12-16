@@ -1,5 +1,5 @@
-#ifndef _HEADER_H_
-#define _HEADER_H_
+#ifndef _MONTY_H_
+#define _MONTY_H_
 
 #define _POSIX_C_SOURCE 200809L
 
@@ -60,6 +60,9 @@ typedef struct var_s
 /* global struct to hold flag for queue and stack length */
 extern var_t var;
 
+/* global struct to hold flag for queue and stack length */
+var_t var;
+
 stack_t *add_node(stack_t **stack, const int n);
 void get_op(char *op, stack_t **stack, unsigned int line_number);
 void m_push(stack_t **stack, unsigned int line_number);
@@ -68,4 +71,4 @@ void free_stack(int status, void *arg);
 void free_lineptr(int status, void *arg);
 void m_fs_close(int status, void *arg);
 
-#endif /* _HEADER_H_ */
+#endif /* _MONTY_H_ */

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "monty.h"
 
 /**
  * check_for_digits - checks that a string only contains digits

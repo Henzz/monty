@@ -1,7 +1,4 @@
-#include "header.h"
-#include <stdlib.h>
-
-var_t var;
+#include "monty.h"
 
 /**
  * main - Monty bytecode interpreter
