@@ -57,18 +57,21 @@ typedef struct var_s
 #define STACK 0
 #define QUEUE 1
 
-/* global struct to hold flag for queue and stack length */
+/* declaration of global struct to hold flag for queue and stack length */
 extern var_t var;
-
-/* global struct to hold flag for queue and stack length */
-var_t var;
 
 stack_t *add_node(stack_t **stack, const int n);
 void get_op(char *op, stack_t **stack, unsigned int line_number);
 void m_push(stack_t **stack, unsigned int line_number);
+void m_push2(stack_t **stack, int n);
 void m_pall(stack_t **stack, unsigned int line_number);
 void free_stack(int status, void *arg);
 void free_lineptr(int status, void *arg);
 void m_fs_close(int status, void *arg);
+void m_pint(stack_t **stack, unsigned int line_number);
+void m_stack(stack_t **stack, unsigned int line_number);
+void m_queue(stack_t **stack, unsigned int line_number);
+void m_pchar(stack_t **stack, unsigned int line_number);
+void m_pstr(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */

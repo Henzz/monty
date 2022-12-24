@@ -1,5 +1,8 @@
 #include "monty.h"
 
+/* global struct to hold flag for queue and stack length */
+var_t var;
+
 /**
  * main - Monty bytecode interpreter
  * @argc: number of arguments passed
@@ -15,13 +18,13 @@ int main(int argc, char *argv[])
 	char *lineptr = NULL, *op = NULL;
 	size_t n = 0;
 
+	var.queue = 0;
+	var.stack_len = 0;
 	if (argc != 2)
 	{
 		dprintf(STDOUT_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	var.queue = 0;
-	var.stack_len = 0;
 	fs = fopen(argv[1], "r");
 	if (fs == NULL)
 	{
