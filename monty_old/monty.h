@@ -1,5 +1,7 @@
-#ifndef MONTY_H
-#define MONTY_H /* MONTY_H */
+#ifndef _MONTY_H_
+#define _MONTY_H_
+
+#define _POSIX_C_SOURCE 200809L
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +30,7 @@ typedef struct stack_s
 } stack_t;
 
 /**
- * struct instruction_s - opcode and its function
+ * struct instruction_s - opcoode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
  *
@@ -72,4 +74,4 @@ void m_queue(stack_t **stack, unsigned int line_number);
 void m_pchar(stack_t **stack, unsigned int line_number);
 void m_pstr(stack_t **stack, unsigned int line_number);
 
-#endif /* MONTY_H */
+#endif /* _MONTY_H_ */
